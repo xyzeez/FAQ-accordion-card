@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [URL here]()
-- Live Site URL: [URL here]()
+- Solution URL: [URL here](https://www.frontendmentor.io/solutions/faq-accordion-card-bem-js-accessibility-animation-M3l0_TxtDX)
+- Live Site URL: [URL here](https://faq-accordion-card-femc.netlify.app/)
 
 
 ## My process
@@ -44,15 +44,14 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
 - Mobile-first workflow
 - BEM
 - Animation
 
 ### Useful resources
 
-- [<details>: The Details disclosure element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details)
-- [<summary>: The Disclosure Summary element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary#browser_compatibility)
+- [The Details disclosure element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details)
+- [The Disclosure Summary element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary#browser_compatibility)
 - [Details and summary](https://web.dev/learn/html/details/)
 - [Two Issues Styling the Details Element and How to Solve Them](https://css-tricks.com/two-issues-styling-the-details-element-and-how-to-solve-them/)
 - [Animate "details" tag with pure CSS](https://dev.to/pixmy/animate-details-tag-with-pure-css-52j7#:~:text=The%20tag%20can%20be,the%20open%20attribute%20is%20set.%22)
