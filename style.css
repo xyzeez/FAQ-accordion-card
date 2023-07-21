@@ -1,0 +1,286 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+* {
+    margin: 0;
+  }
+  
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    min-height: 100vh;
+  }
+  
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+  
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  /*
+    CSS Reset ends
+  */
+
+  details summary { 
+    cursor: pointer;
+  }
+  
+  details summary > * {
+    display: inline;
+  }
+  
+  .sr-only {
+    position: absolute;
+    width: 0.0625rem;
+    height: 0.0625rem;
+    padding: 0;
+    margin: -0.0625rem;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  
+  :root {
+  
+    /*primary colors*/
+    --dark-blue: hsl(238, 29%, 16%);
+    --soft-red: hsl(14, 88%, 65%);
+
+    /* Gradients */
+    --soft-violent: hsl(273, 75%, 66%);
+    --soft-blue: hsl(240, 73%, 65%);
+  
+    /*neutral colors*/
+    --dark-gray-blue: hsl(237, 12%, 33%);
+    --gray-blue: hsl(240, 6%, 50%);
+    --light-gray-blue: hsl(240, 5%, 91%);
+    --white: hsl(0, 0%, 100%);
+  
+    /*font-weights*/
+    --normal: 400;
+    --bold: 700;
+  
+  }
+
+  body {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-weight: var(--normal);
+    background: linear-gradient( 0deg, var(--soft-blue), var(--soft-violent) ) no-repeat;
+  }
+
+  .container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 30rem;
+    height: 100%;
+    margin: 4rem 1.5rem;
+    transition: width 1s, height 1s;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    margin-top: 7.1875rem;
+    padding: 8rem 1.25rem 3rem;
+    border-radius: 1.25rem;
+    background-color: var(--white);
+    box-shadow: 0 0.625rem 0.625rem rgba(0,0,0,.1), 0 2.5rem 2.5rem rgba(0,0,0,.2);
+  }
+
+  .card::before {
+    position: absolute;
+    content: '';
+    width: 15.625rem;
+    height: 14.375rem;
+    top: 0;
+    background-image: url(./images/illustration-woman-online-mobile.svg), url(./images/bg-pattern-mobile.svg);
+    background-size: 100%;
+    background-position: center top, center top 7.5rem;
+    background-repeat: no-repeat;
+  }
+
+  .card-accordion {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    max-width: 25rem;
+  }
+
+  .card-title {
+    font-size: clamp(1.9rem, 1.5vw, 2.5rem);
+    font-weight: var(--bold);
+    color: var(--dark-blue);
+    margin-bottom: 1rem;
+  }
+
+  .card-title > abbr {
+    text-decoration: none;
+  }
+
+  .accordion-block {
+    position: relative;
+    all: unset;
+    width: 100%;
+    height: 100%;
+    max-height: 1.25rem;
+    overflow: hidden;
+    margin: 0;
+    padding: 1.115em 0;
+    border-bottom: 0.0625rem solid var(--light-gray-blue);
+  }
+
+  .accordion-block[open] {
+    max-height: 31.25rem;
+    transition: all 1.5s ease-in-out;
+  }
+
+  .accordion-title {
+    position: relative;
+    font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+    color: var(--dark-gray-blue);
+    list-style: none;
+  }
+
+  .accordion-title::after {
+    content: '';
+    position: absolute;
+    width: 1.25rem;
+    height: 0.625rem;
+    background-image: url(./images/icon-arrow-down.svg);
+    background-repeat: no-repeat;
+    background-size: 55%;
+    background-position: top;
+    top: 25%;
+    right: 0;
+    transition: all .5s;
+  }
+
+  .accordion-title:is(:hover, :focus-visible) {
+    color: var(--soft-red);
+  }
+
+  .accordion-paragraph {
+    font-size: clamp(0.8rem, 1.5vw, 1.1rem);
+    color: var(--gray-blue);
+    margin-top: 0.7rem;
+  }
+
+  .accordion-block[open] .accordion-title {
+    font-weight: var(--bold);
+    color: var(--dark-blue);
+    font-size: clamp(0.875rem, 1.5vw, 1.25rem);
+  }
+
+  .accordion-block[open] .accordion-title::after {
+    transform: rotate(-180deg);
+  }
+
+  .accordion-block[open] .accordion-title ~ * {
+    animation: sweep .5s ease-in-out;
+  }
+  
+  @keyframes sweep {
+    0%    {opacity: 0; transform: translateX(-0.625rem)}
+    100%  {opacity: 1; transform: translateX(0)}
+  }
+
+  @media screen and (min-width: 64rem) {
+
+    .container {
+      max-width: 60rem;
+      height: 36.25rem;
+      padding: 3rem;
+      margin: 4rem 6rem;
+      border-radius: 2.5rem;
+      background-color: var(--white);
+      box-shadow: 0 0.625rem 0.625rem rgba(0,0,0,.1), 0 2.5rem 2.5rem rgba(0,0,0,.2);
+      z-index: 1;
+    }
+
+    .container::before {
+      position: absolute;
+      content: '';
+      width: 12.5rem;
+      height: 12.5rem;
+      top: 40%;
+      left: -7.5rem;
+      background-image: url(./images/illustration-box-desktop.svg);
+      background-size: 100%;
+      background-position: center center 0.3125rem;
+      background-repeat: no-repeat;
+      z-index: 10;
+    }
+
+
+    .card {
+      align-self: start;
+      align-items: start;
+      width: 45%;
+      height: 100%;
+      margin: 0;
+      margin-inline-start: 50%;
+      margin-inline-end: auto;
+      padding: 0;
+      box-shadow: none;
+      border-radius: 0;
+    }
+  
+    .card::before {
+      width: 50%;
+      height: 100%;
+      left: 0;
+      background-image: url(./images/illustration-woman-online-desktop.svg), url(./images/bg-pattern-desktop.svg);
+      background-size: 100%, 180%;
+      background-position: -5.3125rem center, -28.125rem center;
+    }
+  
+    .accordion-block {
+      padding: 1.5rem 0;
+    }
+
+  }
+
+  @media screen and (min-width: 90rem) {
+
+    .container {
+      max-width: 75rem;
+      height: 40.625rem;
+      padding: 5rem;
+    }
+
+    .container::before {
+      width: 15.625rem;
+      height: 15.625rem;
+      left: -9.375rem;
+    }
+
+    .card::before {
+      background-position: -6.875rem center, -37.5rem center;
+    }
+
+  }
