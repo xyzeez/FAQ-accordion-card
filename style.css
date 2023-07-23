@@ -11,6 +11,7 @@
   }
   
   html, body {
+    min-width: 100vw;
     min-height: 100vh;
   }
   
@@ -150,7 +151,7 @@
     max-height: 1.25rem;
     overflow: hidden;
     margin: 0;
-    padding: 1.115em 0;
+    padding: 1.115rem 0;
     border-bottom: 0.0625rem solid var(--light-gray-blue);
   }
 
@@ -198,6 +199,10 @@
 
   .accordion-block[open] .accordion-title::after {
     transform: rotate(-180deg);
+  }
+
+  .accordion-block .accordion-title ~ * {
+    animation: sweep .5s ease-in-out;
   }
 
   .accordion-block[open] .accordion-title ~ * {
